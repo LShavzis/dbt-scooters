@@ -55,3 +55,60 @@ models:
         description: "Average number of trips per day"
         data_tests:
           - not_null
+
+  - name: trips_prep.sql
+    description: "Enriched trips data to be used for creation of analytical models "
+    columns:
+      - name: id
+        description: "Trip ID"
+        data_tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: "User ID"
+        data_tests:
+          - not_null
+      - name: scooter_hw_id
+        description: "ID of the scooter"
+        data_tests:
+          - not_null
+      - name: started_at
+        description: "Timestamp of the trip start"
+        data_tests:
+          - not_null 
+      - name: finished_at
+        description: "Timestamp of the trip end"
+        data_tests:
+          - not_null
+      - name: date
+        description: "Date of the trip stard in YYYY-MM-DD format"
+        data_tests:
+          - not_null      
+      - name: start_lat
+        description: "Latitude of the trip start"
+        data_tests:
+          - not_null
+      - name: start_lon
+        description: "Longitude of the trip start"
+        data_tests:
+          - not_null
+      - name: finish_lat
+        description: "Latitude of the trip finish"
+        data_tests:
+          - not_null
+      - name: finish_lon
+        description: "Longitude of the trip finish"
+        data_tests:
+          - not_null
+      - name: distance_m
+        description: "Distance of the trip in meters"
+        data_tests:
+          - not_null
+      - name: price_rub
+        description: "Price of the trip in rubles rounded to 2 decimal places"
+        data_tests:
+          - not_null
+      - name: is_free
+        description: "Whether the trip was free or not"
+        data_tests:
+          - not_null

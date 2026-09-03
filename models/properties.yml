@@ -1,0 +1,15 @@
+sources:
+  - name: "scooters_raw"
+    description: "Raw data provided by scooters service"
+    loader: "https://t.me/inzhenerka_dbt_bot"
+    tables:
+      - name: "trips"
+        description: "Scooter trips"
+
+      - name: "users"
+        description: "Users of scooter service" 
+models:
+  - name: "trips_prep.sql"
+    description: "Enriched Scooter trips data to be used for creation of analytical models"
+    config:
+      materialized: view
