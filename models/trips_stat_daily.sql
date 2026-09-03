@@ -1,3 +1,8 @@
+ {{config(
+  materialized='table',
+  indexes=[{'columns': ['date']}]
+ )}}
+
 select 
 distinct(date) as date
 ,count(id) as trips
