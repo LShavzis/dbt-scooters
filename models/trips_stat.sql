@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 
 select
 count(id) as trips

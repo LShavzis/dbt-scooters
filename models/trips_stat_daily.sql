@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 select 
 distinct(started_at) :: date as date
 ,count(id) as trips
