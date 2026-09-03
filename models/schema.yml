@@ -22,6 +22,10 @@ models:
         description: "Percentage of free trips"
         data_tests:
           - not_null
+      - name: sum_distance_km
+        description: "Total distance of trips in kilometers"
+        data_tests:
+          - not_null
 
   - name: trips_stat_daily.sql
     description: "Daily aggregates of main metrics for 3 months of data"
