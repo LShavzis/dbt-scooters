@@ -58,6 +58,8 @@ models:
 
   - name: trips_prep
     description: "Enriched trips data to be used for creation of analytical models "
+    config:
+      materialized: view
     columns:
       - name: id
         description: "Trip ID"

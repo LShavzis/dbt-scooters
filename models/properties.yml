@@ -8,8 +8,3 @@ sources:
 
       - name: "users"
         description: "Users of scooter service" 
-models:
-  - name: "trips_prep"
-    description: "Enriched Scooter trips data to be used for creation of analytical models"
-    config:
-      materialized: view
