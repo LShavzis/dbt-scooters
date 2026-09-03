@@ -1,0 +1,45 @@
+models:  
+  - name: trips_stat.sql
+    description: "Basic trips statistics totals for 3 months of data"
+    columns:
+      - name: trips
+        description: "Total count of trips"
+        data_tests:
+          - not_null
+      - name: users
+        description: "Unique number of users"
+        data_tests:
+          - not_null
+      - name: avg_duration_m
+        description: "Average trip duration in minutes"
+        data_tests:
+          - not_null
+      - name: revenue_rub
+        description: "Total revenue in rubles"
+        data_tests:
+          - not_null
+      - name: free_trips_pct
+        description: "Percentage of free trips"
+        data_tests:
+          - not_null
+
+  - name: trips_stat_daily.sql
+    description: "Daily aggregates of main metrics for 3 months of data"
+    columns:
+      - name: date
+        description: "Date of the daily aggregate"
+        data_tests:
+          - not_null
+          - unique
+      - name: trips
+        description: "Total count of trips"
+        data_tests:
+          - not_null
+      - name: max_price_rub
+        description: "Maximum trip price in rubles"
+        data_tests:
+          - not_null
+      - name: avg_distance_km
+        description: "Average trip distance in kilometers"
+        data_tests:
+          - not_null
