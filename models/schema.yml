@@ -43,3 +43,15 @@ models:
         description: "Average trip distance in kilometers"
         data_tests:
           - not_null
+  - name: trips_stat_age.sql
+    description: "Average daily trips by age of the user, careful, doesnt cover days with no trips"
+    columns:
+      - name: age
+        description: "Age of the user"
+        data_tests:
+          - not_null
+          - unique
+      - name: avg_trips
+        description: "Average number of trips per day"
+        data_tests:
+          - not_null
