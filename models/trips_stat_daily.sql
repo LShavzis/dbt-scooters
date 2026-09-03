@@ -1,9 +1,10 @@
-{{ config(materialized='table') }}
 select 
-distinct(started_at) :: date as date
+distinct(date) as date
 ,count(id) as trips
-,max(price) / 100 as max_price_rub 
-,round(AVG(distance):: numeric / 1000, 2) as avg_distance_km 
-from dev_487w.scooters_raw.trips
-group by started_at :: date
+,max(price_rub) as max_price_rub
+,avg(distance_m / 1000) as avg_distance_km
+,sum(price_rub) / sum(duration_s / 60) as avg_price_rub_per_min
+from {{ref('trips_prep')}}
+where started_at >= '2023-01-01'
+group by date
 order by date asc

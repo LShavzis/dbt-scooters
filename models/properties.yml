@@ -8,8 +8,3 @@ sources:
 
       - name: "users"
         description: "Users of scooter service" 
-      
-models:
-  - name: "trips_stat"
-    description: "Basic trips statistics totals for 3 months of data"
-d

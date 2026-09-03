@@ -1,5 +1,5 @@
 models:  
-  - name: trips_stat.sql
+  - name: trips_stat
     description: "Basic trips statistics totals for 3 months of data"
     columns:
       - name: trips
@@ -27,7 +27,7 @@ models:
         data_tests:
           - not_null
 
-  - name: trips_stat_daily.sql
+  - name: trips_stat_daily
     description: "Daily aggregates of main metrics for 3 months of data"
     columns:
       - name: date
@@ -45,6 +45,10 @@ models:
           - not_null
       - name: avg_distance_km
         description: "Average trip distance in kilometers"
+        data_tests:
+          - not_null
+      - name: avg_price_rub_per_min
+        description: "Average price per minute in rubles"
         data_tests:
           - not_null
   - name: trips_stat_age.sql
